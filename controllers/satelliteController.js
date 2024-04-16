@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Satellite = require('../models/Satellite');
+const satelliteController = require('../controllers/satelliteController');
+
 
 // Get all satellites
 router.get('/satellites', async (req, res) => {
@@ -14,6 +16,7 @@ router.get('/satellites', async (req, res) => {
 });
 
 // Add a new satellite
+router.post('/satellites', satelliteController.createSatellite);
 router.post('/satellites', async (req, res) => {
     try {
         const { name, type, launched } = req.body;
@@ -23,6 +26,7 @@ router.post('/satellites', async (req, res) => {
         console.error(err);
         res.status(500).json({ message: 'Server Error' });
     }
+
 });
 
 // Update a satellite
@@ -66,8 +70,6 @@ exports.createSatellite = async (req, res) => {
     }
 };
 
-module.exports = router;
-const Satellite = require('../models/Satellite');
 
 // Controller function to get all satellites
 exports.getAllSatellites = async (req, res) => {
@@ -138,3 +140,6 @@ exports.deleteSatellite = async (req, res) => {
         res.status(500).json({ message: 'Server Error' });
     }
 };
+
+
+module.exports = router;
