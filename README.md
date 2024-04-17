@@ -11,14 +11,23 @@ SatTrak is a satellite tracking web application designed to provide real-time in
 ##Installation
 
 To run the SatTrak web app locally, follow these steps:
+
     1. Clone the repository:
+    
        bashCopy code
+       
        git clone https://github.com/yourusername/sat-trak-app.git
+       
     2. Navigate to the project directory:
+    
        bashCopy code
+       
        cd sat-trak-app
+       
     3. Install dependencies:
+    
        bashCopy code
+       
        npm install
 
 ##Usage
